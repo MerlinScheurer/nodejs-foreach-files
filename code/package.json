@@ -1,9 +1,11 @@
 {
   "name": "nodejs-foreach-files",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
-  "scripts": {},
-  "author": "",
+  "scripts": {
+    "start": "node ./main.js"
+  },
+  "author": "Merlin Scheurer",
   "license": "MIT",
   "dependencies": {
     "cli-progress": "^3.12.0",
