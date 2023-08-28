@@ -1,0 +1,10 @@
+{
+  "name": "nodejs-foreach-files",
+  "version": "2.0.0",
+  "description": "Batch convert images or videos to optimized codecs.",
+  "scripts": {
+    "start": "cd ./code && node ./main.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
