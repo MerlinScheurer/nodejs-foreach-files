@@ -21,6 +21,14 @@ const loadFiles = (__dirname) => {
   const inputFolder = path.join(__dirname, "..", "input");
   const outputFolder = path.join(__dirname, "..", "output");
 
+  if (!fs.existsSync(inputFolder)) {
+    fs.mkdirSync(inputFolder, { recursive: true });
+  }
+
+  if (!fs.existsSync(outputFolder)) {
+    fs.mkdirSync(outputFolder, { recursive: true });
+  }
+
   const files = getAllFiles(inputFolder, []);
   const count = files.length;
 
