@@ -7,6 +7,7 @@ async function imageToAvif(cb, data) {
 
   if (!fs.existsSync(target)) {
     sharp(source)
+      // Resize to max supported image size for avif, to prevent creating broken files
       .resize(6780, 4320, {
         fit: sharp.fit.inside,
         withoutEnlargement: true,
