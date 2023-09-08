@@ -3,8 +3,7 @@
   "version": "2.0.0",
   "description": "Batch convert images or videos to optimized codecs.",
   "scripts": {
-    "start": "cd ./code && node ./main.js",
-    "postinstall": "node ./code/helper/init.js"
+    "start": "cd ./code && node ./main.js"
   },
   "author": "Merlin Scheurer",
   "license": "MIT"
