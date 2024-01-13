@@ -161,6 +161,11 @@ const areWorkerRunning = async (backoffIteration = 0) => {
         console.log(`Exists: ${targetFileWithEnding}`);
       }
 
+      const done = numDone++;
+      if (!verbose) {
+        progress.update(done);
+      }
+
       continue;
     }
 
