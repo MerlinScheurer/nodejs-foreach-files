@@ -6,9 +6,12 @@ async function gifToMp4(cb, data) {
   const { source, target, verbose } = data;
 
   if (!fs.existsSync(target)) {
+    if (verbose) {
+      console.log("Starting transcode of: " + source);
+    }
+
     const ffmpegCommand = ffmpeg()
       .input(source)
-      .inputFormat("gif")
       .on("error", (err, stdout, stderr) => {
         if (verbose) {
           console.log("Cannot process video: " + err.message);
@@ -16,7 +19,18 @@ async function gifToMp4(cb, data) {
 
         cb(false, data);
       })
-      .on("end", (stdout, stderr) => {
+      .on("progress", function (progress) {
+        if (verbose) {
+          console.log(
+            "Processing: " +
+              progress.percent +
+              "% done @ " +
+              progress.currentFps +
+              " fps"
+          );
+        }
+      })
+      .on("end", (err, stdout, stderr) => {
         if (verbose) {
           console.log("Transcoding succeeded !");
         }
