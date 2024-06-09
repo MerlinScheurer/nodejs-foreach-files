@@ -26,6 +26,7 @@ const knownSkipableFileExtensions = [
   "txt",
   "3",
   "psd",
+  "rar",
 ];
 
 let verbose = false;
