@@ -9,6 +9,7 @@ export const workerByFileType = {
   jpg: { worker: imageWorker, targetType: "avif" },
   jpeg: { worker: imageWorker, targetType: "avif" },
   png: { worker: imageWorker, targetType: "avif" },
+  webp: { worker: imageWorker, targetType: "avif" },
   gif: { worker: gifWorker, targetType: "mp4" },
   //   mp4: { worker: av1Worker, targetType: "mkv" },
   //   mkv: { worker: av1Worker, targetType: "mkv" },
